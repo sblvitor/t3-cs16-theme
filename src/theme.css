@@ -186,7 +186,3 @@ header:has(+ div [data-settings-page-scroll]) {
   box-shadow: 3px 3px 0 rgba(0,0,0,.45) !important;
 }
 [data-slot="select-item"][data-highlighted], [data-slot="menu-item"][data-highlighted] { background: #958831 !important; color: #fff !important; }
-
-/* Light mode: de_dust daylight */
-:root:not(.dark) [data-workspace-area="conversation"] { background-color: #e6d6ac !important; background-image: linear-gradient(to right, #ecdcb2 0 16.6%, #e6d5a9 16.6% 33.3%, #e0cea0 33.3% 50%, #dac797 50% 66.6%, #d4c08e 66.6% 83.3%, #cdb985 83.3%) !important; background-size: 100% 100% !important; }
-:root:not(.dark) [data-message-role="assistant"] .chat-markdown { background: rgba(255,250,235,.7) !important; padding: 10px 14px !important; }

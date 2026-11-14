@@ -1,6 +1,6 @@
 # Counter-Strike 1.6 theme for T3 Code
 
-A pixel-art fan theme for [T3 Code](https://t3.codes): old olive menu panels (VGUI) in the sidebar, a dark console-style backdrop with scanlines in the chat area, a T and a CT on either side, amber HUD numbers, and a green crosshair cursor.
+A pixel-art fan theme for [T3 Code](https://t3.codes): old olive menu panels (VGUI) in the sidebar, a dark console-style backdrop with scanlines in the chat area, a T and a CT on either side, amber HUD numbers, and a green crosshair cursor. Dark mode only.
 
 ![sprites](dist/sheet.png)
 
@@ -22,7 +22,7 @@ The characters show only when the window is at least 1500px wide, and the HUD at
 | Colors for each sprite letter | `sprites/palette.json` |
 | HUD text and pixel font | `HUD` / `FONT` in `build.py` |
 | CSS (`@name@` = sprite `name` as base64) | `src/theme.css` |
-| App color roles (dark + light) | `src/theme.base.json` |
+| App color roles | `src/theme.base.json` |
 
 Rebuild after any change (needs Python 3 and Pillow):
 
