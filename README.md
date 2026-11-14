@@ -1,6 +1,6 @@
 # Counter-Strike 1.6 theme for T3 Code
 
-A pixel-art fan theme for [T3 Code](https://t3.codes): old olive menu panels (VGUI) in the sidebar, poster-style stripes in the chat area, a T and a CT on either side, amber HUD numbers, and a green crosshair cursor.
+A pixel-art fan theme for [T3 Code](https://t3.codes): old olive menu panels (VGUI) in the sidebar, a dark console-style backdrop with scanlines in the chat area, a T and a CT on either side, amber HUD numbers, and a green crosshair cursor.
 
 ![sprites](dist/sheet.png)
 

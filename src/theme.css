@@ -4,11 +4,12 @@ body, .chat-markdown, .composer-tiptap, [data-slot="button"], [data-slot="input"
   font-family: Tahoma, Verdana, "DejaVu Sans", "Bitstream Vera Sans", sans-serif;
 }
 
-/* ---- Chat area: poster stripes, T vs CT, HUD ---- */
+/* ---- Chat area: console backdrop, T vs CT, HUD ---- */
 [data-workspace-area="conversation"] {
-  background-color: #1f2133 !important;
-  background-image: linear-gradient(to right, #3a3d50 0 16.6%, #303347 16.6% 33.3%, #282a40 33.3% 50%, #22223f 50% 66.6%, #1f1b45 66.6% 83.3%, #19134a 83.3%) !important;
-  background-size: 100% 100% !important;
+  --scan: linear-gradient(rgba(0,0,0,.16) 1px, transparent 1px);
+  background-color: #2c3226 !important;
+  background-image: var(--scan) !important;
+  background-size: 100% 3px !important;
   cursor: url("data:image/png;base64,@cross@") 11 11, crosshair;
   image-rendering: pixelated;
 }
@@ -18,9 +19,9 @@ body, .chat-markdown, .composer-tiptap, [data-slot="button"], [data-slot="input"
     background-image:
       url("data:image/png;base64,@hudl@"),
       url("data:image/png;base64,@hudr@"),
-      linear-gradient(to right, #3a3d50 0 16.6%, #303347 16.6% 33.3%, #282a40 33.3% 50%, #22223f 50% 66.6%, #1f1b45 66.6% 83.3%, #19134a 83.3%) !important;
-    background-repeat: no-repeat !important;
-    background-size: 192px 21px, 114px 21px, 100% 100% !important;
+      var(--scan) !important;
+    background-repeat: no-repeat, no-repeat, repeat !important;
+    background-size: 192px 21px, 114px 21px, 100% 3px !important;
     background-position: left 20px bottom 18px, right 20px bottom 18px, 0 0 !important;
   }
 }
@@ -31,40 +32,31 @@ body, .chat-markdown, .composer-tiptap, [data-slot="button"], [data-slot="input"
       url("data:image/png;base64,@ct@"),
       url("data:image/png;base64,@hudl@"),
       url("data:image/png;base64,@hudr@"),
-      linear-gradient(to right, #3a3d50 0 16.6%, #303347 16.6% 33.3%, #282a40 33.3% 50%, #22223f 50% 66.6%, #1f1b45 66.6% 83.3%, #19134a 83.3%) !important;
-    background-repeat: no-repeat !important;
-    background-size: 180px 180px, 180px 180px, 192px 21px, 114px 21px, 100% 100% !important;
+      var(--scan) !important;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
+    background-size: 180px 180px, 180px 180px, 192px 21px, 114px 21px, 100% 3px !important;
     background-position: left 0 bottom 52px, right 0 bottom 52px, left 20px bottom 18px, right 20px bottom 18px, 0 0 !important;
   }
 }
 .messages-timeline-scroll, [data-chat-composer-form] { background: transparent !important; }
 .composer-tiptap, [data-slot="composer-host"] [contenteditable] { cursor: text; }
 
-/* In-game text panel behind assistant replies */
-.dark [data-message-role="assistant"] .chat-markdown {
-  background: rgba(10,10,20,.62) !important;
-  border: 1px solid rgba(0,0,0,.6);
-  padding: 10px 14px !important;
-}
 .chat-markdown-codeblock { border: 1px solid #000 !important; box-shadow: 2px 2px 0 rgba(0,0,0,.4) !important; }
 
-/* ---- Sidebar: VGUI panel ---- */
+/* ---- Sidebar: same panel as the Options dialog ---- */
 [data-slot="sidebar-inner"] {
-  background-color: #3e4637 !important;
-  background-image:
-    linear-gradient(to top, #b39a64 0 10px, #8c7646 10px 12px, transparent 12px),
-    linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px) !important;
-  background-repeat: no-repeat, repeat !important;
-  background-size: 100% 100%, 4px 4px !important;
-  background-position: 0 0, 0 0 !important;
-  image-rendering: pixelated;
+  background: #4c5844 !important;
   border-right: 1px solid #292c21 !important;
-  box-shadow: inset 1px 1px 0 #6f7a64;
+  box-shadow: inset 1px 1px 0 #8c9284, inset -1px 0 0 #6f7a64;
 }
-[data-slot="sidebar-inner"] * { image-rendering: auto; }
-[data-thread-item] { border: 1px solid transparent; text-shadow: 1px 1px 0 rgba(0,0,0,.55); }
+[data-thread-item] { border: 1px solid transparent; }
 [data-thread-item]:hover { border-color: #8c9284 #292c21 #292c21 #8c9284; }
-[data-slot="sidebar-inner"] [data-slot="input"] { background: #2f3529 !important; }
+[data-slot="sidebar-inner"] [data-slot="input"] { background: #3e4637 !important; }
+h3[id^="settings-nav-group-"] { color: #c4b550 !important; font-weight: 400 !important; }
+[data-sidebar-row][aria-current]:not([aria-current="false"]) {
+  color: #c4b550 !important; background: #4c5844 !important;
+  box-shadow: inset 1px 1px 0 #8c9284, inset -1px -1px 0 #292c21 !important;
+}
 
 /* Title bar like a VGUI frame */
 [data-chat-header] {
