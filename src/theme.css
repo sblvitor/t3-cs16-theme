@@ -1,0 +1,122 @@
+/* Counter-Strike 1.6: VGUI olive chrome + pixel-art battlefield */
+*, *::before, *::after { border-radius: 0 !important; }
+body, .chat-markdown, .composer-tiptap, [data-slot="button"], [data-slot="input"] {
+  font-family: Tahoma, Verdana, "DejaVu Sans", "Bitstream Vera Sans", sans-serif;
+}
+
+/* ---- Chat area: poster stripes, T vs CT, HUD ---- */
+[data-workspace-area="conversation"] {
+  background-color: #1f2133 !important;
+  background-image: linear-gradient(to right, #3a3d50 0 16.6%, #303347 16.6% 33.3%, #282a40 33.3% 50%, #22223f 50% 66.6%, #1f1b45 66.6% 83.3%, #19134a 83.3%) !important;
+  background-size: 100% 100% !important;
+  cursor: url("data:image/png;base64,@cross@") 11 11, crosshair;
+  image-rendering: pixelated;
+}
+[data-workspace-area="conversation"] * { image-rendering: auto; }
+@media (min-width: 1100px) {
+  [data-workspace-area="conversation"] {
+    background-image:
+      url("data:image/png;base64,@hudl@"),
+      url("data:image/png;base64,@hudr@"),
+      linear-gradient(to right, #3a3d50 0 16.6%, #303347 16.6% 33.3%, #282a40 33.3% 50%, #22223f 50% 66.6%, #1f1b45 66.6% 83.3%, #19134a 83.3%) !important;
+    background-repeat: no-repeat !important;
+    background-size: 192px 21px, 114px 21px, 100% 100% !important;
+    background-position: left 20px bottom 18px, right 20px bottom 18px, 0 0 !important;
+  }
+}
+@media (min-width: 1500px) {
+  [data-workspace-area="conversation"] {
+    background-image:
+      url("data:image/png;base64,@t@"),
+      url("data:image/png;base64,@ct@"),
+      url("data:image/png;base64,@hudl@"),
+      url("data:image/png;base64,@hudr@"),
+      linear-gradient(to right, #3a3d50 0 16.6%, #303347 16.6% 33.3%, #282a40 33.3% 50%, #22223f 50% 66.6%, #1f1b45 66.6% 83.3%, #19134a 83.3%) !important;
+    background-repeat: no-repeat !important;
+    background-size: 180px 180px, 180px 180px, 192px 21px, 114px 21px, 100% 100% !important;
+    background-position: left 0 bottom 52px, right 0 bottom 52px, left 20px bottom 18px, right 20px bottom 18px, 0 0 !important;
+  }
+}
+.messages-timeline-scroll, [data-chat-composer-form] { background: transparent !important; }
+.composer-tiptap, [data-slot="composer-host"] [contenteditable] { cursor: text; }
+
+/* In-game text panel behind assistant replies */
+.dark [data-message-role="assistant"] .chat-markdown {
+  background: rgba(10,10,20,.62) !important;
+  border: 1px solid rgba(0,0,0,.6);
+  padding: 10px 14px !important;
+}
+.chat-markdown-codeblock { border: 1px solid #000 !important; box-shadow: 2px 2px 0 rgba(0,0,0,.4) !important; }
+
+/* ---- Sidebar: VGUI panel, dust crates + C4 ---- */
+[data-slot="sidebar-inner"] {
+  background-color: #3e4637 !important;
+  background-image:
+    url("data:image/png;base64,@crates@"),
+    linear-gradient(to top, #b39a64 0 10px, #8c7646 10px 12px, transparent 12px),
+    linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px) !important;
+  background-repeat: no-repeat, no-repeat, repeat !important;
+  background-size: 168px 114px, 100% 100%, 4px 4px !important;
+  background-position: right 10px bottom 10px, 0 0, 0 0 !important;
+  image-rendering: pixelated;
+  border-right: 1px solid #292c21 !important;
+  box-shadow: inset 1px 1px 0 #6f7a64;
+}
+[data-slot="sidebar-inner"] * { image-rendering: auto; }
+[data-thread-item] { border: 1px solid transparent; text-shadow: 1px 1px 0 rgba(0,0,0,.55); }
+[data-thread-item]:hover { border-color: #8c9284 #292c21 #292c21 #8c9284; }
+[data-slot="sidebar-inner"] [data-slot="input"] { background: #2f3529 !important; }
+
+/* Title bar like a VGUI frame */
+[data-chat-header] {
+  background: #4c5844 !important;
+  border-bottom: 1px solid #292c21 !important;
+  box-shadow: inset 0 1px 0 #8c9284;
+}
+
+/* VGUI bevels */
+[data-slot="button"] {
+  border: 1px solid !important;
+  border-color: #8c9284 #292c21 #292c21 #8c9284 !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+[data-slot="button"]:hover { filter: brightness(1.12); }
+[data-slot="button"]:active { border-color: #292c21 #8c9284 #8c9284 #292c21 !important; }
+[data-slot="input"], [data-slot="select-trigger"] {
+  border: 1px solid !important;
+  border-color: #292c21 #8c9284 #8c9284 #292c21 !important;
+  box-shadow: none !important;
+}
+[data-slot="composer-host"], [data-slot="composer-host"]:focus-within {
+  background: #3e4637 !important;
+  border: 1px solid !important;
+  border-color: #8c9284 #292c21 #292c21 #8c9284 !important;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.4) !important;
+}
+.composer-tiptap, .composer-tiptap:focus, .composer-tiptap:focus-visible, [data-slot="composer-host"] [contenteditable]:focus { outline: none !important; box-shadow: none !important; }
+[data-user-message-bubble] {
+  border: 1px solid !important;
+  border-color: #8c9284 #292c21 #292c21 #8c9284 !important;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.35) !important;
+}
+[data-slot="dialog-popup"], [data-slot="popover-popup"], [data-slot="menu-popup"], [data-thread-details-card] {
+  border: 1px solid !important;
+  border-color: #8c9284 #292c21 #292c21 #8c9284 !important;
+  box-shadow: 4px 4px 0 rgba(0,0,0,.45) !important;
+}
+[data-slot="tooltip-popup"] {
+  background: #4c5844 !important; color: #dedfd6 !important;
+  border: 1px solid #292c21 !important; box-shadow: none !important;
+}
+svg.lucide { stroke-linecap: square; stroke-linejoin: miter; }
+
+/* VGUI scrollbars */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: #2f3529; }
+::-webkit-scrollbar-thumb { background: #4c5844; border: 1px solid; border-color: #8c9284 #292c21 #292c21 #8c9284; }
+[data-slot="scroll-area-thumb"] { background: #5a6750 !important; border: 1px solid #292c21; }
+
+/* Light mode: de_dust daylight */
+:root:not(.dark) [data-workspace-area="conversation"] { background-color: #e6d6ac !important; background-image: linear-gradient(to right, #ecdcb2 0 16.6%, #e6d5a9 16.6% 33.3%, #e0cea0 33.3% 50%, #dac797 50% 66.6%, #d4c08e 66.6% 83.3%, #cdb985 83.3%) !important; background-size: 100% 100% !important; }
+:root:not(.dark) [data-message-role="assistant"] .chat-markdown { background: rgba(255,250,235,.7) !important; padding: 10px 14px !important; }
