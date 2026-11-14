@@ -60,10 +60,10 @@
     "sidebarRowActive": "#56634d",
     "sidebarRowSelected": "#56634d",
     "sidebarBorder": "#292c21",
-    "terminalBackground": "#121410",
-    "terminalForeground": "#d8e0c8",
+    "terminalBackground": "#2f3529",
+    "terminalForeground": "#dedfd6",
     "terminalCursor": "#ffa000",
-    "terminalSelection": "#95883166",
+    "terminalSelection": "#95883180",
     "terminalScrollbar": "#4c5844",
     "terminalScrollbarHover": "#5a6750"
   },
